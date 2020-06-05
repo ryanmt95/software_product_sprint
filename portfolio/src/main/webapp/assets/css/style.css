@@ -16,28 +16,35 @@ body, html {
 }
 
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     color: #fff;
     font-weight: 500;
 
-    padding: 1em 2em;
+    padding: 2em 2em;
 }
 
 .nav-bar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 17.5%;
     min-width: 35vh;
+
+    z-index: 1;
+}
+
+.nav-item {
     color: #a0a0a0;
 }
 
-.nav-bar .active {
+.nav-item:hover {
+    cursor: pointer;
     color: #fff;
 }
 
-.nav-bar div:hover{
-    cursor: pointer;
+.nav-bar .active {
     color: #fff;
 }
 
@@ -48,6 +55,12 @@ body, html {
     color: #fff;
     font-size: 1.8em;
     font-weight: 500;
-    padding: 0.20em 0;
     letter-spacing: 2px;
+
+    top: 30%;
+    z-index: 0;
+}
+
+.name:hover {
+    cursor: default;
 }
