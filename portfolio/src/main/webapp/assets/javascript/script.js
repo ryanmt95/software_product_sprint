@@ -30,5 +30,17 @@
 $(document).ready(function(){
 
     // jQuery methods go here...
-
+    // animate profile section
+    $(".intro").hover(function() {
+        console.log('hello world');
+        $(".intro span:nth-child(1).border").addClass("animate1");
+        $(".intro span:nth-child(2).border").addClass("animate2");
+        $(".intro span:nth-child(3).border").addClass("animate3");
+        $(".intro span:nth-child(4).border").addClass("animate4");
+    }, function() {
+        $(".intro span:nth-child(1).border").removeClass("animate1");
+        $(".intro span:nth-child(2).border").removeClass("animate2");
+        $(".intro span:nth-child(3).border").removeClass("animate3");
+        $(".intro span:nth-child(4).border").removeClass("animate4");
+    });
 });
