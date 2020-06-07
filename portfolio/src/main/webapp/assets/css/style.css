@@ -1,7 +1,15 @@
 body, html {
   height: 100%;
   margin: 0;
+  background-color: #263238;
   font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+section.experience .container div, section.experience .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fullpage-wrapper {
@@ -84,6 +92,55 @@ body, html {
 }
 .profile span {
   color: #304165;
+}
+
+section.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 2em;
+  font-size: 3em;
+}
+section.experience .lines {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+section.experience .lines span {
+  padding: 0 1.5em;
+}
+section.experience .lines:before, section.experience .lines:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  flex-grow: 1;
+  height: 1px;
+  background: #CCCCCC;
+  min-width: 2px;
+}
+section.experience .container {
+  text-align: center;
+  padding: 2em 0;
+}
+section.experience .container div {
+  width: 30rem;
+  height: 25rem;
+}
+section.experience .container div:nth-child(1) {
+  background-color: #fff;
+}
+section.experience .container div:nth-child(1) img {
+  width: auto;
+  height: 65%;
+}
+section.experience .container div:nth-child(2) {
+  background-color: #0066bf;
+}
+section.experience .container div:nth-child(2) img {
+  width: 80%;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

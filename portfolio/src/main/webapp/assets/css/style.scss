@@ -2,16 +2,11 @@
 
 $text-color: #fff;
 
-// .fullpage-wrapper {
-//     height: 100%;
-//     background: {
-//         position: center;
-//         repeat: no-repeat;
-//         size: cover;
-//         image: url(../images/bokeh.jpeg);
-//     }
-//     position: relative;
-// }
+%center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .fullpage-wrapper {
     position: relative;
@@ -102,5 +97,65 @@ $text-color: #fff;
 
     span {
         color: #304165;
+    }
+}
+
+section.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 2em;
+    font-size: 3em;
+
+    .lines {
+        width:80%;
+        display:flex;
+        justify-content:center;
+        text-align:center;
+        align-items:center;
+
+        span {
+            padding: 0 1.5em;
+        }
+    }
+
+    .lines:before, .lines:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        flex-grow: 1;
+        height: 1px;
+        background: #CCCCCC;
+        min-width: 2px;
+    }
+
+    .container {
+        @extend %center;
+        text-align: center;
+        padding: 2em 0;
+
+        div {
+            width: 30rem;
+            height: 25rem;
+            @extend %center;
+        }
+
+        div:nth-child(1) {
+            background-color: #fff;
+
+            img {
+                width: auto;
+                height: 65%;
+            }
+        }
+
+        div:nth-child(2) {
+            background-color: #0066bf;
+
+            img {
+                width: 80%;
+                height: auto;
+            }
+        }
     }
 }
