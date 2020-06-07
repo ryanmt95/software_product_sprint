@@ -39,6 +39,14 @@ section.experience .container div, section.experience .container {
   font-weight: 500;
   padding: 2em 2em;
 }
+.header .contact {
+  z-index: 1;
+}
+.header .contact i {
+  color: white;
+  font-size: 1.5em;
+  padding-left: 0.8em;
+}
 
 .nav-bar {
   position: relative;
@@ -131,9 +139,14 @@ section.experience .container div {
 section.experience .container div:nth-child(1) {
   background-color: #fff;
 }
-section.experience .container div:nth-child(1) img {
+section.experience .container div:nth-child(1) div {
+  height: 90%;
+  width: 90%;
+  border: 4px solid #9600B5;
+}
+section.experience .container div:nth-child(1) div img {
   width: auto;
-  height: 65%;
+  height: 70%;
 }
 section.experience .container div:nth-child(2) {
   background-color: #0066bf;
