@@ -6,7 +6,7 @@ body, html {
   color: #fff;
 }
 
-section.experience .container div, section.experience .container {
+section.experience .container, section.experience .container div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,10 +56,11 @@ section.experience .container div, section.experience .container {
   min-width: 35vh;
   z-index: 1;
 }
-.nav-bar div {
+.nav-bar a {
+  text-decoration: none;
   color: #a0a0a0;
 }
-.nav-bar div:hover {
+.nav-bar a:hover {
   cursor: pointer;
   color: #fff;
 }
@@ -75,7 +76,6 @@ section.experience .container div, section.experience .container {
   font-weight: 500;
   letter-spacing: 2px;
   top: 30%;
-  /* center name */
   z-index: 0;
   margin-left: auto;
   margin-right: auto;

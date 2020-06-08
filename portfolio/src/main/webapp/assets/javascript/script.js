@@ -32,7 +32,6 @@ $(document).ready(function(){
     // jQuery methods go here...
     // animate profile section
     $(".intro").hover(function() {
-        console.log('hello world');
         $(".intro span:nth-child(1).border").addClass("animate1");
         $(".intro span:nth-child(2).border").addClass("animate2");
         $(".intro span:nth-child(3).border").addClass("animate3");

@@ -1,0 +1,15 @@
+@use 'base';
+
+@font-face {
+    font-family: odachi;
+    src: url("../fonts/Odachi.otf") format("opentype");
+}
+
+.fullpage-wrapper::before {
+    background-image: url(../images/travel/travel.jpeg);
+}
+
+.main {
+    color: black;
+    z-index: 3;
+}
