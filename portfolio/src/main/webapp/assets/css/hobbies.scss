@@ -1,9 +1,9 @@
 @use 'base';
 
-@font-face {
-    font-family: odachi;
-    src: url("../fonts/Odachi.otf") format("opentype");
-}
+// @font-face {
+//     font-family: odachi;
+//     src: url("../fonts/Odachi.otf") format("opentype");
+// }
 
 .fullpage-wrapper::before {
     background-image: url(../images/travel/travel.jpeg);
@@ -30,5 +30,10 @@
         background: rgba(46, 46, 48, 0.2);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         overflow: hidden;
+
+        font-family: 'Dancing Script', cursive;
+        font-size: 0.8em;
+
+        cursor: pointer;
     }
 }
