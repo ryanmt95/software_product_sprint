@@ -90,8 +90,24 @@ body, html {
 }
 
 .main {
-  color: black;
-  z-index: 3;
+  font-size: 3.5em;
+  color: #fff;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.main .quote {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 2em;
+  background: rgba(46, 46, 48, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=hobbies.css.map */
