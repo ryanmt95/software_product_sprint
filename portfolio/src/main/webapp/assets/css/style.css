@@ -1,0 +1,239 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #263238;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+section.experience .container, section.experience .container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullpage-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.fullpage-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/bokeh.jpeg);
+  filter: grayscale(40%) opacity(1);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-weight: 500;
+  padding: 2em 2em;
+}
+.header .contact {
+  z-index: 1;
+}
+.header .contact i {
+  color: white;
+  font-size: 1.5em;
+  padding-left: 0.8em;
+}
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 17.5%;
+  min-width: 35vh;
+  z-index: 1;
+}
+.nav-bar a {
+  text-decoration: none;
+  color: #a0a0a0;
+}
+.nav-bar a:hover {
+  cursor: pointer;
+  color: #fff;
+}
+.nav-bar .active {
+  color: #fff;
+}
+
+.name {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  top: 30%;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.name:hover {
+  cursor: default;
+}
+
+.profile {
+  font-family: "Kristi", cursive;
+  font-size: 3.5em;
+  color: #fff;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.profile span {
+  color: #304165;
+}
+.profile .intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 2em;
+  background: rgba(46, 46, 48, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.profile .intro .animate1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(46, 46, 48, 0.2), #fff);
+  animation: animate1 2s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.profile .intro .animate2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(46, 46, 48, 0.2), #fff);
+  animation: animate2 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.profile .intro .animate3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to left, rgba(46, 46, 48, 0.2), #fff);
+  animation: animate3 2s linear infinite;
+}
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.profile .intro .animate4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to top, rgba(46, 46, 48, 0.2), #fff);
+  animation: animate4 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+section.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 2em;
+  font-size: 3em;
+}
+section.experience .lines {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+section.experience .lines span {
+  padding: 0 1.5em;
+}
+section.experience .lines:before, section.experience .lines:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  flex-grow: 1;
+  height: 1px;
+  background: #CCCCCC;
+  min-width: 2px;
+}
+section.experience .container {
+  text-align: center;
+  padding: 2em 0;
+}
+section.experience .container div {
+  width: 30rem;
+  height: 25rem;
+}
+section.experience .container div:nth-child(1) {
+  background-color: #fff;
+}
+section.experience .container div:nth-child(1) div {
+  height: 90%;
+  width: 90%;
+  border: 4px solid #9600B5;
+}
+section.experience .container div:nth-child(1) div img {
+  width: auto;
+  height: 70%;
+}
+section.experience .container div:nth-child(2) {
+  background-color: #0066bf;
+}
+section.experience .container div:nth-child(2) img {
+  width: 80%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

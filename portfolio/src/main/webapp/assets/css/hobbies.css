@@ -1,0 +1,97 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #263238;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+.fullpage-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.fullpage-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/bokeh.jpeg);
+  filter: grayscale(40%) opacity(1);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-weight: 500;
+  padding: 2em 2em;
+}
+.header .contact {
+  z-index: 1;
+}
+.header .contact i {
+  color: white;
+  font-size: 1.5em;
+  padding-left: 0.8em;
+}
+
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 17.5%;
+  min-width: 35vh;
+  z-index: 1;
+}
+.nav-bar a {
+  text-decoration: none;
+  color: #a0a0a0;
+}
+.nav-bar a:hover {
+  cursor: pointer;
+  color: #fff;
+}
+.nav-bar .active {
+  color: #fff;
+}
+
+.name {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  top: 30%;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.name:hover {
+  cursor: default;
+}
+
+@font-face {
+  font-family: odachi;
+  src: url("../fonts/Odachi.otf") format("opentype");
+}
+.fullpage-wrapper::before {
+  background-image: url(../images/travel/travel.jpeg);
+}
+
+.main {
+  color: black;
+  z-index: 3;
+}
+
+/*# sourceMappingURL=hobbies.css.map */

@@ -35,7 +35,9 @@
         <version>2.2.0</version>
         <configuration>
           <!-- TODO: set project ID. -->
-          <deploy.projectId>YOUR_PROJECT_ID_HERE</deploy.projectId>
+          <port>5000</port>
+          <!-- <deploy.port>4000</deploy.port> -->
+          <deploy.projectId>rtan-sps-summer20</deploy.projectId>
           <deploy.version>1</deploy.version>
         </configuration>
       </plugin>
