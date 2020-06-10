@@ -15,6 +15,8 @@
 package com.google.sps.servlets;
 
 import java.io.IOException;
+import com.google.gson.Gson;
+import java.util.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +26,25 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-  @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Ryan Michael Tan!</h1>");
-  }
+    private Map<String,String> summary = new HashMap<String, String>();
+
+    @Override
+    public void init() {
+        summary.put("intro", "Climbing has always been a passion of mine.");
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        
+        String summary_json = convertToJson(summary);
+        
+        response.setContentType("text/html;");
+        response.getWriter().println(summary_json);
+    }
+
+    private String convertToJson(Map summary) {
+        Gson gson = new Gson();
+        String json = gson.toJson(summary);
+        return json;
+    }
 }
