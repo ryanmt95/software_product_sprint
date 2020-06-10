@@ -30,7 +30,8 @@ public class DataServlet extends HttpServlet {
 
     @Override
     public void init() {
-        summary.put("intro", "Climbing has always been a passion of mine.");
+        summary.put("intro", "There is no too short, too tall, too heavy, too warm, too wet, or too humid. "
+        + "There is just one excuse: too weak. - Alex Megos");
     }
 
     @Override

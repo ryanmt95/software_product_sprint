@@ -28,18 +28,4 @@ $(document).ready(function(){
         $(".intro span:nth-child(4).border").removeClass("animate4");
     });
 
-    // generate quote when rendered
-    get_quote();
 });
-
-
-// get quote from quote servlet 
-function get_quote() {
-        
-    fetch('/quote').then((response) => {
-        return response.text();
-    }).then(quote => {
-        $(".quote").text(quote);
-        console.log("success!");
-    })
-}
