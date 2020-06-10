@@ -1,0 +1,4 @@
+
+# ignore css and map files
+*.css
+*.css.map
