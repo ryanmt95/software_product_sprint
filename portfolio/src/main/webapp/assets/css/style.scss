@@ -131,13 +131,34 @@ section.experience {
         @extend %center;
         text-align: center;
         padding: 2em 0;
+        font-family: 'Asap', sans-serif;
+        font-size: 0.45em;
 
+        .title {
+            color: #bdbdbd;
+            font-weight: 500;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+
+            padding-bottom: 1em;
+        }
+
+        .content {
+            color: rgba(0, 0, 0, 0.68);
+            font-size: 0.9em;
+            width: 90%;
+        }
+    }
+
+    .container > {
         div {
             width: 30rem;
             height: 25rem;
             @extend %center;
         }
+    }
 
+    .container.qritive {
         div:nth-child(1) {
             background-color: #fff;
 
@@ -146,6 +167,8 @@ section.experience {
                 width: 90%;
                 border: 4px solid #9600B5;
 
+                @extend %center;
+
                 img {
                     width: auto;
                     height: 70%;
@@ -153,13 +176,28 @@ section.experience {
             }
         }
 
-        // div:nth-child(2) {
-        //     background-color: #0066bf;
+        div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
 
-        //     img {
-        //         width: 80%;
-        //         height: auto;
-        //     }
-        // }
+    .container.tribalist > {
+
+        div:nth-child(1) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        div:nth-child(2) {
+            background-color: #0066bf;
+
+            img {
+                width: 80%;
+                height: auto;
+            }
+        }
     }
 }
