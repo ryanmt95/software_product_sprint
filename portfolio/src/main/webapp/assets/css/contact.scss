@@ -1,0 +1,38 @@
+@use 'base';
+
+.fullpage-wrapper {
+    height: 100%;
+}
+
+.fullpage-wrapper::before {
+    background-image: none;
+}
+
+.header {
+    color: rgba(0, 0, 0, 0.68);
+}
+
+.nav-bar .link > a:hover{
+    color: rgba(0, 0, 0, 0.68);
+}
+
+.nav-bar .contact {
+
+    border: 1px solid rgba(0, 0, 0, 0.68); 
+
+    a {
+       color: rgba(0, 0, 0, 0.68); 
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.68); 
+        a {
+            color: white;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
