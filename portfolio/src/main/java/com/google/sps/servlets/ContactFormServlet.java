@@ -14,34 +14,38 @@ import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
+import com.google.sps.data.Message;
 
 /** Servlet that processes text. */
 @WebServlet("/contact_form")
 public final class ContactFormServlet extends HttpServlet {
 
+  private DatastoreService datastore;
+  
+  @Override
+  public void init() {
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    this.datastore = datastore;
+  }
+
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     // Get input from form
-    String fname = getParameter(request, "fname", "");
-    String lname = getParameter(request, "lname", "");
+    String firstName = getParameter(request, "firstName", "");
+    String lastName = getParameter(request, "lastName", "");
     String email = getParameter(request, "email", "");
     String mobile = getParameter(request, "mobile", "");
-    String message = getParameter(request, "message", "");
+    String comments = getParameter(request, "comments", "");
 
-    // // Respond with the result.
-    // response.setContentType("text/html;");
-    // response.getWriter().println(form);
+    Entity formEntity = new Entity("Message");
+    formEntity.setProperty("firstName", firstName);
+    formEntity.setProperty("lastName", lastName);
+    formEntity.setProperty("email", email);
+    formEntity.setProperty("mobile", mobile);
+    formEntity.setProperty("comments", comments);
 
-    Entity form_entity = new Entity("contact_form");
-    form_entity.setProperty("fname", fname);
-    form_entity.setProperty("lname", lname);
-    form_entity.setProperty("email", email);
-    form_entity.setProperty("mobile", mobile);
-    form_entity.setProperty("message", message);
-
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    datastore.put(form_entity);
+    this.datastore.put(formEntity);
 
     response.sendRedirect("/contact.html");
   }
@@ -65,30 +69,23 @@ public final class ContactFormServlet extends HttpServlet {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
-    List<Map<String, String>> users = new ArrayList<>();
+    List<Message> messageList = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
-      long id = entity.getKey().getId();
 
-      Map<String, String> user = new HashMap<String, String>();
-
-      String fname = (String) entity.getProperty("fname");
-      String lname = (String) entity.getProperty("lname");
+      String firstName = (String) entity.getProperty("firstName");
+      String lastName = (String) entity.getProperty("lastName");
       String email = (String) entity.getProperty("email");
       String mobile = (String) entity.getProperty("mobile");
-      String message = (String) entity.getProperty("message");
+      String comments = (String) entity.getProperty("comments");
 
-      user.put("fname", fname);
-      user.put("lname", lname);
-      user.put("email", email);
-      user.put("mobile", mobile);
-      user.put("message", message);
+      Message message = new Message(firstName, lastName, email, mobile, comments);
 
-      users.add(user);
+      messageList.add(message);
     }
 
     Gson gson = new Gson();
 
     response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(users));
+    response.getWriter().println(gson.toJson(messageList));
   }
 }
