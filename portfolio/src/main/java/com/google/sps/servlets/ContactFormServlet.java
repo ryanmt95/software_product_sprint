@@ -17,7 +17,7 @@ import com.google.gson.Gson;
 import com.google.sps.data.Message;
 
 /** Servlet that processes text. */
-@WebServlet("/contact_form")
+@WebServlet("/message")
 public final class ContactFormServlet extends HttpServlet {
 
   private DatastoreService datastore;
@@ -64,10 +64,9 @@ public final class ContactFormServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Query query = new Query("contact_form");
+    Query query = new Query("Message");
 
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    PreparedQuery results = datastore.prepare(query);
+    PreparedQuery results = this.datastore.prepare(query);
 
     List<Message> messageList = new ArrayList<>();
     for (Entity entity : results.asIterable()) {
