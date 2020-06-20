@@ -1,9 +1,9 @@
 body, html {
     height: 100%;
     margin: 0;
-    background-color: #263238;
+    background-color: #fff;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: rgba(26, 26, 26, 0.9);
 }
 
 $text-color: #fff;
@@ -16,7 +16,7 @@ $text-color: #fff;
 
 .fullpage-wrapper {
     position: relative;
-    height: 100%;
+    height: 75%;
 }
 
 .fullpage-wrapper::before {
@@ -39,10 +39,10 @@ $text-color: #fff;
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: $text-color;
-    font-weight: 500;
 
-    padding: 2em 2em;
+    padding: 1em 2em;
 
     .contact {
         z-index: 1;
@@ -54,14 +54,25 @@ $text-color: #fff;
         }
 
     }
+
+    .name {
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .name:hover {
+    cursor: default;
+    }
 }
 
 .nav-bar {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 17.5%;
     min-width: 35vh;
+    font-size: 0.85em;
 
     z-index: 1;
 
@@ -70,33 +81,28 @@ $text-color: #fff;
         color: #a0a0a0;
     }
 
-
-    a:hover {
+    .link > a:hover {
         cursor: pointer;
         color: $text-color;
     }
 
     .active {
         color: #fff;
+        font-weight: 500;
     }
-}
 
-.name {
-    position: absolute;
-    text-align: center;
-    color: $text-color;
-    font-size: 1.8em;
-    font-weight: 500;
-    letter-spacing: 2px;
+    .contact {
+        border: 1px solid white;
+        padding: 1em 1em;
+        color: white;
+        transition: 200ms
+    }
 
-    top: 30%;
-    z-index: 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-}
+    .contact:hover {
+        a {
+            color: rgba(26, 28, 26, 1);
+        }
+        background: white;
+    }
 
-.name:hover {
-    cursor: default;
 }

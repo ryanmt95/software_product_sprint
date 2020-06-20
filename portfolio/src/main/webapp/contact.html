@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kristi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./assets/javascript/jquery-3.5.1.min.js"></script>
+    <!-- font awesome kit-->
+    <script src="https://kit.fontawesome.com/99584de37a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/javascript/script.js"></script>
+  </head>
+  <body>
+    <div class="fullpage-wrapper">
+        <section class="header">
+            <div class="name">
+                RYAN MICHAEL TAN
+            </div>
+            <div class="nav-bar">
+                <div class="link"><a href="./">HOME</a></div>
+                <div class="link"><a href="./">ABOUT</a></div>
+                <div class="link"><a href="./">HOBBIES</a></div>
+                <div class="contact"><a href="./">CONTACT</a></div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="contactinfo">
+                <div>
+                    <h2>Contact Info</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fas fa-compass"></i></span>
+                            <span>12 Meadow Road<br>
+                                On A Cload, <br>
+                                466788</span>
+                        </li>
+                        <li>
+                            <span><i class="fas fa-envelope-open-text"></i></span>
+                            <span>ryan.m.tan95@gmail.com</span>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li><a href="#"></a><i class="fab fa-github-square"></i></li>
+                        <li><a href="#"></a><i class="fab fa-linkedin"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <form class="contact_form" action="/message" method="POST">
+                <h2>Send a Message</h2>
+                <div class="form_box">
+                    <div class="input_box w50">
+                        <input type="text" name="firstName" required>
+                        <span>First Name</span>
+                    </div>
+                    <div class="input_box w50">
+                        <input type="text" name="lastName" required>
+                        <span>Last Name</span>
+                    </div>
+                    <div class="input_box w50">
+                        <input type="text" name="email" required>
+                        <span>Email Address</span>
+                    </div>
+                    <div class="input_box w50">
+                        <input type="text" name="mobile">
+                        <span>Mobile Number</span>
+                    </div>
+                    <div class="input_box w100">
+                        <textarea name="comments" required></textarea>
+                        <span>Write your message here</span>
+                    </div>
+                    <div class="input_box w100">
+                        <input type="submit">
+                    </div>
+                </div>
+            </form>  
+        </div>
+    </div>
+  </body>
+</html>
