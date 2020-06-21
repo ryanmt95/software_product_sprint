@@ -38,7 +38,6 @@ public final class ContactFormServlet extends HttpServlet {
     // Get input from form
     String firstName = getParameter(request, "firstName", "");
     String lastName = getParameter(request, "lastName", "");
-    // String email = getParameter(request, "email", "");
     String mobile = getParameter(request, "mobile", "");
     String comments = getParameter(request, "comments", "");
     String email = userService.getCurrentUser().getEmail();
