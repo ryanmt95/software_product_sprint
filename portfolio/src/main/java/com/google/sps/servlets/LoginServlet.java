@@ -12,11 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+  private UserService userService;
+
+  @Override
+  public void init() {
+    userService = UserServiceFactory.getUserService();
+  }
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     response.setContentType("text/html");
 
-    UserService userService = UserServiceFactory.getUserService();
     if (userService.isUserLoggedIn()) {
       String userEmail = userService.getCurrentUser().getEmail();
       String urlToRedirectToAfterUserLogsOut = "/";
