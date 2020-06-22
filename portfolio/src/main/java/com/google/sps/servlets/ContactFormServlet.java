@@ -15,17 +15,21 @@ import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.SortDirection;
 import com.google.gson.Gson;
 import com.google.sps.data.Message;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 
 /** Servlet that processes text. */
 @WebServlet("/message")
 public final class ContactFormServlet extends HttpServlet {
 
   private DatastoreService datastore;
+  private UserService userService;
   
   @Override
   public void init() {
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     this.datastore = datastore;
+    userService = UserServiceFactory.getUserService();
   }
 
   @Override
@@ -34,9 +38,9 @@ public final class ContactFormServlet extends HttpServlet {
     // Get input from form
     String firstName = getParameter(request, "firstName", "");
     String lastName = getParameter(request, "lastName", "");
-    String email = getParameter(request, "email", "");
     String mobile = getParameter(request, "mobile", "");
     String comments = getParameter(request, "comments", "");
+    String email = userService.getCurrentUser().getEmail();
 
     Entity formEntity = new Entity("Message");
     formEntity.setProperty("firstName", firstName);

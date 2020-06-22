@@ -28,4 +28,28 @@ $(document).ready(function(){
         $(".intro span:nth-child(4).border").removeClass("animate4");
     });
 
+    displayContact();
 });
+
+// get login status
+function getLoginStatus() {
+
+    return fetch('/loginStatus').then(response => {
+        return response.json();
+    }).then(dataObject => {
+        return dataObject["loginStatus"]
+    })
+}
+
+function displayContact() {
+
+    console.log("displayContact function");
+    getLoginStatus().then(loginStatus => {
+        if (loginStatus) {
+            $('.nav-bar').append('<div class="link"><a href="/login">LOGOUT</a></div>')
+            $('.nav-bar').append('<div class="contact"><a href="./contact.html">CONTACT</a></div>');
+        } else {
+            $('.nav-bar').append('<div class="link"><a href="/login">LOGIN</a></div>')
+        }
+    });
+}
