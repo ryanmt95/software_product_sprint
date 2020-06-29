@@ -51,7 +51,7 @@ public final class FindMeetingQuery {
   }
   
   // aggregates a timetable based on the schedule of attendees involved 
-  private List<TimeRange> constructTimeTable(Collection<Event> events, Collection<String> attendees) {
+  private static List<TimeRange> constructTimeTable(Collection<Event> events, Collection<String> attendees) {
     
     List<TimeRange> timeTable = new ArrayList<TimeRange>();
 
@@ -83,7 +83,7 @@ public final class FindMeetingQuery {
   }
 
   // find available meeting timeslots based on the timetable of attendees
-  private List<TimeRange> findMeetingSlots(List<TimeRange> timeTable, int meetingDuration) {
+  private static List<TimeRange> findMeetingSlots(List<TimeRange> timeTable, int meetingDuration) {
     
     List<TimeRange> meetings = new ArrayList<TimeRange>();
     int firstStartTime = timeTable.get(0).start();
@@ -110,7 +110,7 @@ public final class FindMeetingQuery {
   }
 
   // adds a meeting slot if the timeslot meets requirements
-  private void addMeetingSlot(List<TimeRange> meetings, int start, int end, boolean inclusive, int meetingDuration) {
+  private static void addMeetingSlot(List<TimeRange> meetings, int start, int end, boolean inclusive, int meetingDuration) {
     if (end - start >= meetingDuration) {
         TimeRange timeslot = TimeRange.fromStartEnd(start, end, inclusive);
             meetings.add(timeslot); 
